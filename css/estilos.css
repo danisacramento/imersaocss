@@ -1,3 +1,4 @@
+/*soft reset */
 * {
     margin: 0;
     padding: 0;
@@ -5,28 +6,35 @@
   }
 
 body{
+
     background-image: linear-gradient(to right, rgb(36, 57, 73) 0%, rgb(81, 127, 164) 100%);
     background-size: auto 100vh; /*"auto" para manter a proporção sem distorcer*/
     height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    
 }
 
+/* se a tela tiver pelo menos 400px vai carregar estes estilos */
 @media (min-width: 400px) {
     body {
       font-size: 18px;
     }
 }
 
+/*break point */
 @media (min-width: 600px) {
     body {
       font-size: 22px;
     }
 }
+
   
 header {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
 }
 
@@ -35,8 +43,9 @@ header {
     position: fixed;
     top: 0;
     width: 100vw;
+    
 }
-  
+
 .menu ul{
     display: flex; /*deixar os itens do menu na horizontal*/
     justify-content: space-around; /*espaçar os itens do menu*/
@@ -46,28 +55,94 @@ header {
     list-style: none;
 }
   
-.menu a{
-    color: teal;
+.menu a {
+    color: #3d5a80;
     display: block;
     padding: 10px;
-    text-decoration:none;
-}
+    text-decoration: none;
+  }
   
-.site-title {
-    color: #fba706;
-    text-align:center;
-}
+  .site-title {
+    color: #ef6c4d;
+    font-family: 'Dancing Script', cursive;
+    font-size: 4em;
+    line-height: 1em;
+    margin-bottom: 20px;
+    text-align: center;
+  }
   
-.site-subtitle {
-    color: silver;
+  .site-subtitle {
+    color: #e0fbfc;
     font-style: italic;
     font-weight: lighter;
     text-align: center;
     font-size: 2em;
-
-}
-
-.img-portfolio {
+  }
+  
+  .contato,
+  .portfolio {
+    padding: 1em;
+  }
+  
+  .contato h2,
+  .portfolio h2 {
+    color: white;
+    font-family: 'Carter One', cursive;
+    font-size: 2.2em;
+    margin-bottom: .5em;
+  }
+  
+   .grid {
+    color: #e0fbfc;
+    display: grid;
+    gap: 1em;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  @media (min-width: 400px) {
+    .contato,
+    .portfolio {
+      padding: 3em 2em 2em;
+      height: 100vh;
+    }
+  
+     .grid {
+      grid-template-columns: 200px 200px;
+      height: calc(100vh - 4.5em - 75px);
+    }
+  }
+  
+  @media (min-width: 940px) {
+    .contato,
+    .portfolio {
+      padding: 2em;
+    }
+  
+     .grid {
+      grid-template-columns: repeat(3, 200px);
+      height: calc(100vh - 8em - 75px);
+    }
+    
+  }
+  
+  .portfolio figcaption {
+    font-weight: bold;
+  }
+  
+  .img-portfolio {
+    border-radius: 10px;
     height: 180px;
+    object-fit: cover;
     width: 180px;
+  }
+  
+  .icons a {
+    color: white;
+    font-size: 6em;
+  }
+
+  a:hover {
+    color: hotpink;
   }
